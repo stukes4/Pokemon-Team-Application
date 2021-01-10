@@ -1,0 +1,81 @@
+/*This project will allow the user to choose a starter pokemon 
+ * and enter the names of other pokemon they would like to add
+ * to their team. Their team will be placed in a hashtable
+ * 
+ */
+
+import java.util.Hashtable;
+import java.util.Scanner;
+public class Pokemon {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+while(true) {
+	Scanner T = new Scanner(System.in);	
+		
+	Hashtable<Integer,String> Pokemon = new Hashtable<Integer,String>();
+	
+	
+	System.out.println("Welcome to my Pokemon team generator!");
+	System.out.println("Select a number from 1 to 3 to choose a starter Pokemon from Kanto. 1"
+			+ " = Bulbasaur, 2 = Charmander, and 3 = Squirtle");
+	int U=T.nextInt();
+		
+	if(U == 1) {
+		Pokemon.put(1, "Bulbasaur");
+		System.out.println(Pokemon);
+	}
+	else if(U ==2) {
+		Pokemon.put(1, "Charmander");
+		System.out.println(Pokemon);
+	
+	}
+	else {
+		Pokemon.put(1, "Squirtle");
+		System.out.println(Pokemon);
+	}
+	
+	Scanner V = new Scanner(System.in);
+	
+	for(int i =2; i <= 6; i++) { 
+		
+	System.out.println("Type another Pokemon you would like to add");
+	String H = V.nextLine();
+		Pokemon.put(i, H);
+		System.out.println(Pokemon);	
+	}
+	
+	System.out.println("You have reached the end of the Pokemon Team Genreator. This is your final team");
+	System.out.println(Pokemon);
+	
+	Scanner X = new Scanner(System.in);
+	System.out.println("Would you like to save this team? yes or no");
+	String Save = X.nextLine();
+	
+	if(Save.equals("yes")) {
+		Scanner Y = new Scanner(System.in);
+		System.out.println("Type a name for this team");
+		String name = Y.nextLine();
+		System.out.println(name + " has been confirmed");
+	}
+	
+	if(Save.equals("no")) {
+		System.out.println("This team will discarded");
+	}
+	Scanner M = new Scanner(System.in);
+	System.out.println("Would you like to create another team");
+	String Create = M.nextLine();
+	
+	if(Create.equals("yes")) {
+		
+	}
+	
+	if(Create.equals("no")) {
+		System.out.println("Thank you for using the Pokemon Team Generator. See you later!");
+		break;
+	}
+	
+	}
+	}
+}
+
